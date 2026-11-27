@@ -17,6 +17,7 @@ class SettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+        enableEdgeToEdge()
 
         val backButton = findViewById<View>(R.id.btn_back)
 

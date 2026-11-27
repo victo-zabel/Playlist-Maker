@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.widget.doOnTextChanged
 
 class SearchActivity : AppCompatActivity() {
 
@@ -23,6 +24,7 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
+        enableEdgeToEdge()
 
         val backButton = findViewById<View>(R.id.btn_back)
         backButton.setOnClickListener {
@@ -34,26 +36,14 @@ class SearchActivity : AppCompatActivity() {
 
         clearButton.setOnClickListener {
             input.setText("")
-            val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
             inputMethodManager?.hideSoftInputFromWindow(input.windowToken, 0)
         }
 
-        val textWatcher = object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                clearButton.isVisible = !s.isNullOrEmpty()
-                searchText = s?.toString() ?: TEXT
-            }
+        input.doOnTextChanged { text, _, _, _ ->
+            clearButton.isVisible = !text.isNullOrEmpty()
+            searchText = text?.toString() ?: TEXT
         }
-
-        input.addTextChangedListener(textWatcher)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

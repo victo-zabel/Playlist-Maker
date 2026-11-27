@@ -8,36 +8,21 @@
     android:paddingHorizontal="@dimen/indent_16"
     android:paddingTop="@dimen/indent_16">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/indent_24"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+    <LinearLayout style="@style/ContainerStyle">
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="@dimen/toolbar_button_size"
-            android:layout_height="@dimen/toolbar_button_size"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/back"
-            android:src="@drawable/ic_arrow_back"
-            app:tint="?attr/colorOnSecondary"/>
+            style="@style/IconButtonStyle" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/indent_12"
-            android:fontFamily="@font/ys_display_medium"
-            android:text="@string/search"
-            style="@style/TextStyle"
-            android:textSize="@dimen/text_title" />
+            style="@style/TitleStyle"
+            android:text="@string/search" />
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/search_bar_height"
-        android:layout_marginVertical="@dimen/indent_8"
+        android:layout_marginTop="@dimen/indent_8"
         android:background="@drawable/search">
 
         <EditText

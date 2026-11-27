@@ -6,7 +6,7 @@
     <style name="ButtonMainStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/zero_dp</item>
-        <item name="android:layout_marginBottom">@dimen/indent_30</item>
+        <item name="android:layout_marginBottom">@dimen/indent_16</item>
         <item name="android:layout_weight">1</item>
         <item name="android:backgroundTint">?attr/colorOnPrimary</item>
         <item name="fontFamily">@font/ys_display_medium</item>
@@ -29,6 +29,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:textSize">@dimen/text_content</item>
         <item name="android:textColor">?attr/colorOnSecondary</item>
+        <item name="drawableTint">?attr/colorOnSurface</item>
     </style>
 
     <!-- Switch Thing Style -->
@@ -36,6 +37,36 @@
     <style name="SwitchSettingStyle" parent="TextStyle">
         <item name="thumbTint">?attr/thumbTint</item>
         <item name="trackTint">?attr/trackTint</item>
+    </style>
+
+    <!-- Title Style -->
+
+    <style name="ContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- Icon Button Style -->
+
+    <style name="IconButtonStyle">
+        <item name="android:layout_width">@dimen/toolbar_button_size</item>
+        <item name="android:layout_height">@dimen/toolbar_button_size</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:contentDescription">@string/back</item>
+        <item name="android:src">@drawable/ic_arrow_back</item>
+        <item name="tint">?attr/colorOnSecondary</item>
+    </style>
+
+    <!-- Text Title Style -->
+
+    <style name="TitleStyle" parent="TextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/indent_12</item>
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:textSize">@dimen/text_title</item>
     </style>
 
 </resources>
